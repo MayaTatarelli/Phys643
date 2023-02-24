@@ -39,7 +39,7 @@ u[-1] = np.abs(u[-2])
 
 #Initial condition for surface density:
 #Sharp Gaussian centered at the midpoint of the simulation box
-f = norm.pdf(x,0.5,1E-1)
+f = norm.pdf(x,0.5,5E-2)
 
 #Temporal parameters
 t = 0.0
@@ -57,9 +57,9 @@ A = np.eye(Ngrid) * (1.0 + 2.0 * beta) + np.eye(Ngrid, k=1) * -beta + np.eye(Ngr
 #Setting up plot
 plt.ion()
 fig, ax = plt.subplots(1,1)
-ax.plot(x, f, 'k-') #plot the initial state for reference
+ax.plot(x, f, 'k--', label='Initial') #plot the initial state for reference
 
-plt1, = ax.plot(x, f, 'ro')
+plt1, = ax.plot(x, f, 'r-', label='Solution')
 fig.canvas.draw()
 
 
@@ -82,5 +82,6 @@ for count in range(Nsteps):
     plt1.set_ydata(f)
     ax.set_ylabel('$\Sigma$')
     ax.set_xlabel('Radial Distance')
+    ax.legend()
     fig.canvas.draw()
     plt.pause(0.005)
