@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Sat Feb 18 17:49:06 2023
-
+This is a numerical simulation of the time evolution 
+of a viscously accreting disk.
 @author: Maya Tatarelli
+@Collaborators: Amalia Karalis, Nicole Ford, Kevin Marimbu
 """
-#Collaborators: Amalia Karalis, Nicole Ford, Kevin Marimbu
 
 import numpy as np
 import matplotlib.pyplot as plt
